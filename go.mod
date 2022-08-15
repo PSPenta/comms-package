@@ -1,4 +1,4 @@
-module comms-package
+module github.com/PSPenta/comms-package
 
 go 1.18
 
