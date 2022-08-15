@@ -1,6 +1,6 @@
 package main
 
-import comms "comms-package/cmd"
+import comms "github.com/PSPenta/comms-package/cmd"
 
 func main() {
 

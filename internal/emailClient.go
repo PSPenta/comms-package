@@ -2,13 +2,14 @@ package internal
 
 import (
 	"bytes"
-	"comms-package/config"
-	"comms-package/pkg"
 	"encoding/json"
 	"fmt"
 	"html/template"
 	"net/smtp"
 	"strings"
+
+	"github.com/PSPenta/comms-package/config"
+	"github.com/PSPenta/comms-package/pkg"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"

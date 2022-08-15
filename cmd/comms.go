@@ -1,9 +1,9 @@
 package comms
 
 import (
-	"comms-package/config"
-	"comms-package/internal"
-	"comms-package/pkg"
+	"github.com/PSPenta/comms-package/config"
+	"github.com/PSPenta/comms-package/internal"
+	"github.com/PSPenta/comms-package/pkg"
 )
 
 func NewEmailClient(emailConfig *config.SenderInfo, recipientInfo *config.RecipientInfo) *internal.EmailClient {

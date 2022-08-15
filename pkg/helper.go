@@ -1,11 +1,12 @@
 package pkg
 
 import (
-	"comms-package/config"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"github.com/PSPenta/comms-package/config"
 )
 
 func CurlRequest(senderConfig *config.SenderInfo) (*http.Request, error) {
