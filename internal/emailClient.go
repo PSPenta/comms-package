@@ -10,7 +10,6 @@ import (
 
 	"github.com/PSPenta/comms-package/config"
 	"github.com/PSPenta/comms-package/pkg"
-
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"

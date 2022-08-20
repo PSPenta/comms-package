@@ -16,24 +16,30 @@ go get -u gitlab.com/purplle-experience/comms-package
 #### Step to follow :
 
 
-- import `comms "gitlab.com/purplle-experience/comms-package/cmd"`
+- import `comms "github.com/PSPenta/comms-package/cmd"`
 - Initialize the SenderConfig and RecipientInfo, 
 ```
-import comms "gitlab.com/purplle-experience/comms-package/cmd"
+import comms "github.com/PSPenta/comms-package/cmd"
 
 func main() {
 
-	senderInfo := comms.GetSenderConfig()
+	senderInfo := GetSenderConfig()
 	senderInfo.FromEmail = ""
 	senderInfo.ServiceType = "aws|api"
 	senderInfo.AwsRegion = ""
 	senderInfo.AwsAccessKey = ""
 	senderInfo.AwsSecretAccessKey = ""
 
-	recipientInfo := comms.GetRecipientInfo()
+	recipientInfo := GetRecipientInfo()
 	recipientInfo.SendTo = []string{""}
 	recipientInfo.CC = []string{""}
 	recipientInfo.ContentType = "plain/text"
+
+	client := NewEmailClient(senderInfo, recipientInfo)
+
+	emailCommunicator := GetEmailCommunicator(client)
+
+	emailCommunicator.Comms.SendMail()
 }
 ```
 -  Initialize the email client once the SenderConfig and RecipientInfo is configured,
