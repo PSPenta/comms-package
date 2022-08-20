@@ -1,22 +1,35 @@
 package comms
 
-func main() {
+import (
+	"github.com/PSPenta/comms-package/config"
+	"github.com/PSPenta/comms-package/internal"
+	"github.com/PSPenta/comms-package/pkg"
+)
 
-	senderInfo := GetSenderConfig()
-	senderInfo.FromEmail = ""
-	senderInfo.ServiceType = "aws|api"
-	senderInfo.AwsRegion = ""
-	senderInfo.AwsAccessKey = ""
-	senderInfo.AwsSecretAccessKey = ""
+func NewEmailClient(emailConfig *config.SenderInfo, recipientInfo *config.RecipientInfo) *internal.EmailClient {
 
-	recipientInfo := GetRecipientInfo()
-	recipientInfo.SendTo = []string{""}
-	recipientInfo.CC = []string{""}
-	recipientInfo.ContentType = "plain/text"
+	client := &internal.EmailClient{
+		SenderInfo:    emailConfig,
+		RecipientInfo: recipientInfo,
+	}
 
-	client := NewEmailClient(senderInfo, recipientInfo)
+	return client
+}
 
-	emailCommunicator := GetEmailCommunicator(client)
+func GetEmailCommunicator(client *internal.EmailClient) *pkg.EmailCommunicator {
 
-	emailCommunicator.Comms.SendMail()
+	emailComms := &pkg.EmailCommunicator{
+		Comms: client,
+	}
+
+	return emailComms
+}
+
+func GetSenderConfig() *config.SenderInfo {
+
+	return &config.SenderInfo{}
+}
+
+func GetRecipientInfo() *config.RecipientInfo {
+	return &config.RecipientInfo{}
 }
