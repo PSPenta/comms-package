@@ -1,5 +1,3 @@
-<p align="center"><img src="https://managesandbox.purplle.com/static/admin/layout/img/finder-logo.png"></p>
-
 # Communication Package
 
 ```
