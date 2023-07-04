@@ -8,7 +8,7 @@ Which sends communications either using SES service, or using CRM comms APIs.
 
 Installation is done using `go get`.
 ```
-go get -u gitlab.com/purplle-experience/comms-package
+go get -u github.com/PSPenta/comms-package
 ```
 
 #### Step to follow :
